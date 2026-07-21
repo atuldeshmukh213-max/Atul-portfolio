@@ -1,4 +1,6 @@
-/* 1. Global Reset & Fonts */
+/* ==========================================
+   1. GLOBAL RESET & BASE STYLES
+   ========================================== */
 * {
     margin: 0;
     padding: 0;
@@ -7,19 +9,19 @@
 }
 
 html {
-    scroll-behavior: smooth; /* Links par click karne se smooth scroll hoga */
+    scroll-behavior: smooth; /* Smooth scroll on click */
 }
 
 body {
-    background-color: #121212; /* Dark Theme Layout */
+    background-color: #121212; /* Premium Dark Theme Layout */
     color: #ffffff;
     line-height: 1.6;
 }
 
 a {
     text-decoration: none;
-    color: #00adb5; /* Global Link Color */
-    transition: 0.3s;
+    color: #00adb5; /* Cyan Blue Accent Color */
+    transition: 0.3s ease;
 }
 
 a:hover {
@@ -27,10 +29,31 @@ a:hover {
 }
 
 section {
-    padding: 80px 10%; /* Har section ke beech barabar space */
+    padding: 100px 10%;
+    min-height: 80vh;
 }
 
-/* 2. Navigation Bar */
+/* Common Section Headings */
+h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+}
+
+h2::after {
+    content: '';
+    display: block;
+    width: 50%;
+    height: 4px;
+    background-color: #00adb5;
+    margin-top: 5px;
+    border-radius: 2px;
+}
+
+/* ==========================================
+   2. NAVIGATION BAR
+   ========================================== */
 header {
     background-color: #1e1e1e;
     position: fixed;
@@ -69,22 +92,27 @@ nav ul li a {
     font-weight: 500;
 }
 
-nav ul li a:hover {
+/* Active Page Highlight Status */
+nav ul li a.active, nav ul li a:hover {
     color: #00adb5;
+    border-bottom: 2px solid #00adb5;
+    padding-bottom: 5px;
 }
 
-/* 3. Hero Section */
+/* ==========================================
+   3. HERO SECTION
+   ========================================== */
 .hero {
     height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    background: linear-gradient(rgba(18, 18, 18, 0.8), #121212), url('https://unsplash.com') no-repeat center center/cover;
+    background: linear-gradient(rgba(18, 18, 18, 0.85), #121212);
 }
 
 .hero h1 {
-    font-size: 48px;
+    font-size: 45px;
     margin-bottom: 10px;
 }
 
@@ -93,11 +121,13 @@ nav ul li a:hover {
 }
 
 .hero p {
-    font-size: 20px;
+    font-size: 24px;
     color: #b3b3b3;
     margin-bottom: 30px;
+    height: 40px; /* Layout displacement fix for typing script */
 }
 
+/* Premium Button Styling */
 .btn {
     background-color: #00adb5;
     color: #fff;
@@ -112,43 +142,71 @@ nav ul li a:hover {
     transform: translateY(-2px);
 }
 
-/* 4. Headings styling for Sections */
-h2 {
-    font-size: 32px;
-    margin-bottom: 20px;
-    position: relative;
-    display: inline-block;
+/* ==========================================
+   4. ABOUT & AKTU ACADEMICS BOX
+   ========================================== */
+.edu-box {
+    background-color: #1e1e1e;
+    padding: 25px;
+    border-radius: 8px;
+    border-left: 4px solid #00adb5;
+    margin-top: 20px;
 }
 
-h2::after {
-    content: '';
-    display: block;
-    width: 50%;
-    height: 4px;
-    background-color: #00adb5;
-    margin-top: 5px;
-    border-radius: 2px;
+.edu-box h4 {
+    color: #00adb5;
+    font-size: 22px;
+    margin-bottom: 5px;
 }
 
-/* 5. Skills Grid */
-#skills ul {
+/* Scorecards Grid For SGPA */
+.academic-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.score-card {
+    background-color: #252525;
+    padding: 15px;
+    border-radius: 6px;
+    text-align: center;
+    border: 1px solid #333;
+}
+
+.score-card span {
+    font-size: 24px;
+    font-weight: bold;
+    color: #00adb5;
+    display: block;
+    margin-top: 5px;
+}
+
+/* ==========================================
+   5. SKILLS GRID SECTION
+   ========================================== */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
     gap: 20px;
     list-style: none;
     margin-top: 30px;
 }
 
-#skills ul li {
+.skills-grid li {
     background-color: #1e1e1e;
     padding: 15px;
     text-align: center;
     border-radius: 8px;
     font-weight: bold;
     border-bottom: 3px solid #00adb5;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
-/* 6. Projects Section Card layout */
+/* ==========================================
+   6. PROJECTS CARD SECTION
+   ========================================== */
 .project-card {
     background-color: #1e1e1e;
     padding: 25px;
@@ -168,12 +226,16 @@ h2::after {
     margin-bottom: 15px;
 }
 
-/* 7. Footer Section */
+/* ==========================================
+   7. FOOTER BAR
+   ========================================== */
 footer {
     text-align: center;
     padding: 20px;
     background-color: #1e1e1e;
     color: #777;
     font-size: 14px;
-  }
+    margin-top: 50px;
+}
+
   
