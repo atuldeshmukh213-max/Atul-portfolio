@@ -1,6 +1,15 @@
-// 1. Dynamic Typing Effect for Hero Section
-const textElement = document.querySelector(".hero p");
-const roles = ["Main ek Web Developer hoon.", "Main ek UI/UX Designer hoon.", "Main Tech Enthusiast hoon."];
+/* ==========================================================================
+   1. DYNAMIC TYPING EFFECT (Atul Deshmukh Bachchan Portfolio)
+   ========================================================================== */
+const textElement = document.getElementById("typing-text");
+
+// Aapki qualifications aur accurate academic achievements ki list
+const roles = [
+    "Main TERI, Ghazipur ka BCA student hoon.",
+    "Maine Data Structures & C++ par kaam kiya hai.", 
+    "Mera 1st Year Core Score 1071/1400 hai!"
+];
+
 let roleIndex = 0;
 let characterIndex = 0;
 
@@ -8,9 +17,9 @@ function typeEffect() {
     if (characterIndex < roles[roleIndex].length) {
         textElement.innerHTML += roles[roleIndex].charAt(characterIndex);
         characterIndex++;
-        setTimeout(typeEffect, 100); // Har character ki typing speed (100ms)
+        setTimeout(typeEffect, 100); // Har akshar ke type hone ki speed (100ms)
     } else {
-        setTimeout(eraseEffect, 2000); // Pura sentence type hone ke baad 2 second ka pause
+        setTimeout(eraseEffect, 2000); // Poora sentence type hone ke baad 2 second hold
     }
 }
 
@@ -18,21 +27,24 @@ function eraseEffect() {
     if (characterIndex > 0) {
         textElement.innerHTML = roles[roleIndex].substring(0, characterIndex - 1);
         characterIndex--;
-        setTimeout(eraseEffect, 50); // Mitaane ki speed (50ms)
+        setTimeout(eraseEffect, 50); // Akshar mitne ki speed (50ms)
     } else {
-        roleIndex = (roleIndex + 1) % roles.length; // Agla role select karein
-        setTimeout(typeEffect, 500); // Agla role shuru hone se pehle ka pause
+        roleIndex = (roleIndex + 1) % roles.length; // Agla text loop chalane ke liye
+        setTimeout(typeEffect, 500); // Agla sentence shuru hone se pehle brief pause
     }
 }
 
-// Page load hote hi typing effect shuru karein
+// Page load hote hi typing animation trigger karein
 document.addEventListener("DOMContentLoaded", () => {
-    textElement.innerHTML = ""; // Purana static text clear karein
-    typeEffect();
+    if (textElement) {
+        typeEffect();
+    }
 });
 
 
-// 2. Active Link Highlight on Scroll
+/* ==========================================================================
+   2. NAVBAR ACTIVE LINK HIGHLIGHT ON SCROLL
+   ========================================================================== */
 const sections = document.querySelectorAll("section");
 const navLinks = document.querySelectorAll("nav ul li a");
 
@@ -41,14 +53,14 @@ window.addEventListener("scroll", () => {
 
     sections.forEach(section => {
         const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
         
-        // Agar user kisi section ke andar 150px tak scroll kar chuka hai
+        // Jab user scroll karke section ke 150px range me aaye
         if (window.scrollY >= (sectionTop - 150)) {
             currentSection = section.getAttribute("id");
         }
     });
 
+    // Sahi menu item ko active class dena aur baaki ko hatana
     navLinks.forEach(link => {
         link.classList.remove("active");
         if (link.getAttribute("href").includes(currentSection)) {
@@ -56,4 +68,4 @@ window.addEventListener("scroll", () => {
         }
     });
 });
-  
+        
