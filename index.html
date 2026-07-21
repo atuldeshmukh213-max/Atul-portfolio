@@ -1,692 +1,108 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Atul Deshmukh Bachchan | Portfolio</title>
-    
+
     <style>
-        /* --- CSS STYLING --- */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial,sans-serif;
         }
 
-        html {
-            scroll-behavior: smooth;
+        body{
+            background:#f4f4f4;
+            color:#333;
         }
 
-        body {
-            background-color: #121212;
-            color: #ffffff;
-            line-height: 1.6;
+        header{
+            background:#24292e;
+            color:white;
+            text-align:center;
+            padding:40px;
         }
 
-        a {
-            text-decoration: none;
-            color: #00adb5;
-            transition: 0.3s;
+        img{
+            width:170px;
+            height:170px;
+            border-radius:50%;
+            border:4px solid white;
+            object-fit:cover;
         }
 
-        /* Navigation Bar */
-        header {
-            background-color: #1e1e1e;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            left: 0;
-            z-index: 1000;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        section{
+            max-width:900px;
+            margin:30px auto;
+            background:white;
+            padding:25px;
+            border-radius:10px;
+            box-shadow:0 0 10px rgba(0,0,0,.2);
         }
 
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 10%;
+        h2{
+            color:#0077cc;
+            margin-bottom:10px;
         }
 
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
-            color: #00adb5;
+        ul{
+            margin-left:20px;
         }
 
-        nav ul {
-            display: flex;
-            list-style: none;
-        }
-
-        nav ul li {
-            margin-left: 20px;
-        }
-
-        nav ul li a {
-            color: #eeeeee;
-            font-size: 16px;
-            font-weight: 500;
-        }
-
-        nav ul li a.active, nav ul li a:hover {
-            color: #00adb5;
-            border-bottom: 2px solid #00adb5;
-            padding-bottom: 5px;
-        }
-
-        /* Sections Layout */
-        section {
-            padding: 100px 10%;
-            min-height: 80vh;
-        }
-
-        /* Hero Section */
-        .hero {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: flex-start;
-            background: linear-gradient(rgba(18, 18, 18, 0.85), #121212);
-        }
-
-        .hero h1 {
-            font-size: 45px;
-            margin-bottom: 10px;
-        }
-
-        .highlight {
-            color: #00adb5;
-        }
-
-        .hero p {
-            font-size: 24px;
-            color: #b3b3b3;
-            margin-bottom: 30px;
-            height: 40px; 
-        }
-
-        .btn {
-            background-color: #00adb5;
-            color: #fff;
-            padding: 12px 28px;
-            border-radius: 5px;
-            font-weight: bold;
-            box-shadow: 0 4px 15px rgba(0, 173, 181, 0.3);
-        }
-
-        .btn:hover {
-            background-color: #008c95;
-            transform: translateY(-2px);
-        }
-
-        h2 {
-            font-size: 32px;
-            margin-bottom: 20px;
-            position: relative;
-            display: inline-block;
-        }
-
-        h2::after {
-            content: '';
-            display: block;
-            width: 50%;
-            height: 4px;
-            background-color: #00adb5;
-            margin-top: 5px;
-            border-radius: 2px;
-        }
-
-        /* Education & Academics Box */
-        .edu-box {
-            background-color: #1e1e1e;
-            padding: 25px;
-            border-radius: 8px;
-            border-left: 4px solid #00adb5;
-            margin-top: 20px;
-        }
-
-        .edu-box h4 {
-            color: #00adb5;
-            font-size: 22px;
-            margin-bottom: 5px;
-        }
-
-        .academic-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-            margin-top: 15px;
-        }
-
-        .score-card {
-            background-color: #252525;
-            padding: 15px;
-            border-radius: 6px;
-            text-align: center;
-        }
-
-        .score-card span {
-            font-size: 24px;
-            font-weight: bold;
-            color: #00adb5;
-            display: block;
-        }
-
-        /* Skills Grid */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-            gap: 20px;
-            list-style: none;
-            margin-top: 30px;
-        }
-
-        .skills-grid li {
-            background-color: #1e1e1e;
-            padding: 15px;
-            text-align: center;
-            border-radius: 8px;
-            font-weight: bold;
-            border-bottom: 3px solid #00adb5;
-        }
-
-        /* Projects Section */
-        .project-card {
-            background-color: #1e1e1e;
-            padding: 25px;
-            border-radius: 10px;
-            margin-top: 20px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-            border-left: 5px solid #00adb5;
-        }
-
-        .project-card h3 {
-            margin-bottom: 10px;
-            color: #00adb5;
-        }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #1e1e1e;
-            color: #777;
-            font-size: 14px;
-            margin-top: 50px;
+        footer{
+            text-align:center;
+            background:#24292e;
+            color:white;
+            padding:15px;
+            margin-top:20px;
         }
     </style>
 </head>
 <body>
 
-    <!-- Header Menu -->
-    <header>
-        <nav>
-            <div class="logo">Atul Deshmukh</div>
-            <ul>
-                <li><a href="#home" class="active">Home</a></li>
-                <li><a href="#about">About & Academics</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+<header>
+    <img src="photo.jpg" alt="Atul Deshmukh Bachchan">
+    <h1>Atul Deshmukh Bachchan</h1>
+    <p>BCA Student | Web Developer | Programmer</p>
+</header>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <h1>Hi, Main hoon <span class="highlight">Atul Deshmukh Bachchan</span></h1>
-        <p id="typing-text"></p> <!-- JavaScript Typing Animation -->
-        <a href="#projects" class="btn">Mera Kaam Dekhein</a>
-    </section>
+<section>
+    <h2>About Me</h2>
+    <p>
+        I am Atul Deshmukh Bachchan, a BCA 2nd Year (3rd Semester)
+        student at Technical Education and Research Institute, Ghazipur.
+        I am passionate about programming and web development.
+        I enjoy learning new technologies and building useful projects.
+    </p>
+</section>
 
-    <!-- About & Academics Section -->
-    <section id="about">
-        <h2>About & Academics</h2>
-        <p>Mera naam Atul Deshmukh Bachchan hai. Main ek computer application student hoon jo problem-solving aur computer architectures seekhne me ruchi rakhta hai. Maine core programming logic aur computer systems me acchi pakad banayi hai.</p>
-        
-        <div class="edu-box">
-            <h4>Bachelor of Computer Applications (BCA)</h4>
-            <p style="color: #eeeeee; font-weight: 500; margin-bottom: 15px;">Technical Education and Research Institute (TERI), Ghazipur</p>
-            <p style="color: #b3b3b3; font-size: 15px; margin-bottom: 15px;">Affiliated with Dr. A.P.J. Abdul Kalam Technical University (AKTU), Lucknow</p>
-            
-            <!-- Result Cards Details -->
-            <div class="academic-grid">
-                <div class="score-card">
-                    <p style="color: #b3b3b3; font-size: 14px;">1st Semester</p>
-                    <span>8.1 SGPA</span>
-                </div>
-                <div class="score-card">
-                    <p style="color: #b3b3b3; font-size: 14px;">2nd Semester</p>
-                    <span>8.23 SGPA</span>
-                </div>
-                <div class="score-card">
-                    <p style="color: #b3b3b3; font-size: 14px;">Total Score (Year 1)</p>
-                    <span>1071 / 1400</span>
-                </div>
-            </div>
-        </div>
-    </section>
+<section>
+    <h2>Skills</h2>
+    <ul>
+        <li>C</li>
+        <li>C++</li>
+        <li>Python</li>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+        <li>Git & GitHub</li>
+    </ul>
+</section>
 
-    <!-- Skills Section -->
-    <section id="skills">
-        <h2>Meri Skills</h2>
-        <ul class="skills-grid">
-            <li>C & C++</li>
-            <li>Data Structures</li>
-            <li>Digital Electronics</li>
-            <li>Discrete Math</li>
-            <li>HTML5 & CSS3</li>
-            <li>JavaScript</li>
-            <li>Git & GitHub</li>
-        </ul>
-    </section>
+<section>
+    <h2>GitHub</h2>
+    <p>
+        <a href="https://github.com/atuldeshmukh213-max" target="_blank">
+            github.com/atuldeshmukh213-max
+        </a>
+    </p>
+</section>
 
-    <!-- Projects Section -->
-    <section id="projects">
-        <h2>Mere Projects</h2>
-        <div class="project-card">
-            <h3>Data Structures & Algorithmic Logic</h3>
-            <p>Maine C++ aur Data Structures concepts ka use karke numerical mathematical logic aur problem-solving structures design kiye hain.</p>
-            <a href="#" target="_blank">Code Check Karein</a>
-        </div>
-    </section>
+<footer>
+    © 2026 Atul Deshmukh Bachchan | All Rights Reserved
+</footer>
 
-    <!-- Contact Section -->
-    <section id="contact">
-        <h2>Mujhse Connect Karein</h2>
-        <p>Email: <a href="mailto:atuldeshmukh@example.com">atuldeshmukh@example.com</a></p>
-        <p>GitHub Profile: <a href="https://github.com" target="_blank">://github.com</a></p>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2026 Atul Deshmukh Bachchan. All rights reserved.</p>
-    </footer>
-
-    <!-- --- JAVASCRIPT CODE --- -->
-    <script>
-        // Typing Effect Animation
-        const textElement = document.getElementById("typing-text");
-        const roles = [
-            "Main TERI, Ghazipur ka BCA student hoon.",
-            "Maine Data Structures & C++ par kaam kiya hai.", 
-            "Mera 1st Year Core Score 1071/1400 hai!"
-        ];
-        let roleIndex = 0;
-        let characterIndex = 0;
-
-        function typeEffect() {
-            if (characterIndex < roles[roleIndex].length) {
-                textElement.innerHTML += roles[roleIndex].charAt(characterIndex);
-                characterIndex++;
-                setTimeout(typeEffect, 100);
-            } else {
-                setTimeout(eraseEffect, 2000);
-            }
-        }
-
-        function eraseEffect() {
-            if (characterIndex > 0) {
-                textElement.innerHTML = roles[roleIndex].substring(0, characterIndex - 1);
-                characterIndex--;
-                setTimeout(eraseEffect, 50);
-            } else {
-                roleIndex = (roleIndex + 1) % roles.length;
-                setTimeout(typeEffect, 500);
-            }
-        }
-
-        document.addEventListener("DOMContentLoaded", () => {
-            typeEffect();
-        });
-
-        // Scroll highlight navbar active link
-                <!DOCTYPE html>
-<html lang="hi">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Atul Deshmukh Bachchan | Portfolio</title>
-    
-    <style>
-        /* --- CSS STYLING --- */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            background-color: #121212;
-            color: #ffffff;
-            line-height: 1.6;
-        }
-
-        a {
-            text-decoration: none;
-            color: #00adb5;
-            transition: 0.3s;
-        }
-
-        /* Navigation Bar */
-        header {
-            background-color: #1e1e1e;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            left: 0;
-            z-index: 1000;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 10%;
-        }
-
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
-            color: #00adb5;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-        }
-
-        nav ul li {
-            margin-left: 20px;
-        }
-
-        nav ul li a {
-            color: #eeeeee;
-            font-size: 16px;
-            font-weight: 500;
-        }
-
-        nav ul li a.active, nav ul li a:hover {
-            color: #00adb5;
-            border-bottom: 2px solid #00adb5;
-            padding-bottom: 5px;
-        }
-
-        /* Sections Layout */
-        section {
-            padding: 100px 10%;
-            min-height: 80vh;
-        }
-
-        /* Hero Section */
-        .hero {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: flex-start;
-            background: linear-gradient(rgba(18, 18, 18, 0.85), #121212);
-        }
-
-        .hero h1 {
-            font-size: 45px;
-            margin-bottom: 10px;
-        }
-
-        .highlight {
-            color: #00adb5;
-        }
-
-        .hero p {
-            font-size: 24px;
-            color: #b3b3b3;
-            margin-bottom: 30px;
-            height: 40px; 
-        }
-
-        .btn {
-            background-color: #00adb5;
-            color: #fff;
-            padding: 12px 28px;
-            border-radius: 5px;
-            font-weight: bold;
-            box-shadow: 0 4px 15px rgba(0, 173, 181, 0.3);
-        }
-
-        .btn:hover {
-            background-color: #008c95;
-            transform: translateY(-2px);
-        }
-
-        h2 {
-            font-size: 32px;
-            margin-bottom: 20px;
-            position: relative;
-            display: inline-block;
-        }
-
-        h2::after {
-            content: '';
-            display: block;
-            width: 50%;
-            height: 4px;
-            background-color: #00adb5;
-            margin-top: 5px;
-            border-radius: 2px;
-        }
-
-        /* Education & Academics Box */
-        .edu-box {
-            background-color: #1e1e1e;
-            padding: 25px;
-            border-radius: 8px;
-            border-left: 4px solid #00adb5;
-            margin-top: 20px;
-        }
-
-        .edu-box h4 {
-            color: #00adb5;
-            font-size: 22px;
-            margin-bottom: 5px;
-        }
-
-        .academic-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-            margin-top: 15px;
-        }
-
-        .score-card {
-            background-color: #252525;
-            padding: 15px;
-            border-radius: 6px;
-            text-align: center;
-        }
-
-        .score-card span {
-            font-size: 24px;
-            font-weight: bold;
-            color: #00adb5;
-            display: block;
-        }
-
-        /* Skills Grid */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-            gap: 20px;
-            list-style: none;
-            margin-top: 30px;
-        }
-
-        .skills-grid li {
-            background-color: #1e1e1e;
-            padding: 15px;
-            text-align: center;
-            border-radius: 8px;
-            font-weight: bold;
-            border-bottom: 3px solid #00adb5;
-        }
-
-        /* Projects Section */
-        .project-card {
-            background-color: #1e1e1e;
-            padding: 25px;
-            border-radius: 10px;
-            margin-top: 20px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-            border-left: 5px solid #00adb5;
-        }
-
-        .project-card h3 {
-            margin-bottom: 10px;
-            color: #00adb5;
-        }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #1e1e1e;
-            color: #777;
-            font-size: 14px;
-            margin-top: 50px;
-        }
-    </style>
-</head>
-<body>
-
-    <!-- Header Menu -->
-    <header>
-        <nav>
-            <div class="logo">Atul Deshmukh</div>
-            <ul>
-                <li><a href="#home" class="active">Home</a></li>
-                <li><a href="#about">About & Academics</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <h1>Hi, Main hoon <span class="highlight">Atul Deshmukh Bachchan</span></h1>
-        <p id="typing-text"></p> <!-- JavaScript Typing Animation -->
-        <a href="#projects" class="btn">Mera Kaam Dekhein</a>
-    </section>
-
-    <!-- About & Academics Section -->
-    <section id="about">
-        <h2>About & Academics</h2>
-        <p>Mera naam Atul Deshmukh Bachchan hai. Main ek computer application student hoon jo problem-solving aur computer architectures seekhne me ruchi rakhta hai. Maine core programming logic aur computer systems me acchi pakad banayi hai.</p>
-        
-        <div class="edu-box">
-            <h4>Bachelor of Computer Applications (BCA)</h4>
-            <p style="color: #eeeeee; font-weight: 500; margin-bottom: 15px;">Technical Education and Research Institute (TERI), Ghazipur</p>
-            <p style="color: #b3b3b3; font-size: 15px; margin-bottom: 15px;">Affiliated with Dr. A.P.J. Abdul Kalam Technical University (AKTU), Lucknow</p>
-            
-            <!-- Result Cards Details -->
-            <div class="academic-grid">
-                <div class="score-card">
-                    <p style="color: #b3b3b3; font-size: 14px;">1st Semester</p>
-                    <span>8.1 SGPA</span>
-                </div>
-                <div class="score-card">
-                    <p style="color: #b3b3b3; font-size: 14px;">2nd Semester</p>
-                    <span>8.23 SGPA</span>
-                </div>
-                <div class="score-card">
-                    <p style="color: #b3b3b3; font-size: 14px;">Total Score (Year 1)</p>
-                    <span>1071 / 1400</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills">
-        <h2>Meri Skills</h2>
-        <ul class="skills-grid">
-            <li>C & C++</li>
-            <li>Data Structures</li>
-            <li>Digital Electronics</li>
-            <li>Discrete Math</li>
-            <li>HTML5 & CSS3</li>
-            <li>JavaScript</li>
-            <li>Git & GitHub</li>
-        </ul>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects">
-        <h2>Mere Projects</h2>
-        <div class="project-card">
-            <h3>Data Structures & Algorithmic Logic</h3>
-            <p>Maine C++ aur Data Structures concepts ka use karke numerical mathematical logic aur problem-solving structures design kiye hain.</p>
-            <a href="#" target="_blank">Code Check Karein</a>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact">
-        <h2>Mujhse Connect Karein</h2>
-        <p>Email: <a href="mailto:atuldeshmukh@example.com">atuldeshmukh@example.com</a></p>
-        <p>GitHub Profile: <a href="https://github.com" target="_blank">://github.com</a></p>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2026 Atul Deshmukh Bachchan. All rights reserved.</p>
-    </footer>
-
-    <!-- --- JAVASCRIPT CODE --- -->
-    <script>
-        // Typing Effect Animation
-        const textElement = document.getElementById("typing-text");
-        const roles = [
-            "Main TERI, Ghazipur ka BCA student hoon.",
-            "Maine Data Structures & C++ par kaam kiya hai.", 
-            "Mera 1st Year Core Score 1071/1400 hai!"
-        ];
-        let roleIndex = 0;
-        let characterIndex = 0;
-
-        function typeEffect() {
-            if (characterIndex < roles[roleIndex].length) {
-                textElement.innerHTML += roles[roleIndex].charAt(characterIndex);
-                characterIndex++;
-                setTimeout(typeEffect, 100);
-            } else {
-                setTimeout(eraseEffect, 2000);
-            }
-        }
-
-        function eraseEffect() {
-            if (characterIndex > 0) {
-                textElement.innerHTML = roles[roleIndex].substring(0, characterIndex - 1);
-                characterIndex--;
-                setTimeout(eraseEffect, 50);
-            } else {
-                roleIndex = (roleIndex + 1) % roles.length;
-                setTimeout(typeEffect, 500);
-            }
-        }
-
-        document.addEventListener("DOMContentLoaded", () => {
-            typeEffect();
-        });
-
-        // Scroll highlight navbar active link
-
-              
+</body>
+</html>
